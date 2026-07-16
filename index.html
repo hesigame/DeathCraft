@@ -17,17 +17,17 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+<div id="toast">
+    ✅ آدرس سرور کپی شد.
+</div>
 
 <body>
-
-    <script src="js/script.js"></script>
 
 <header>
 
     <div class="logo">
-    <img src="images/server-logo.png" alt="DeathCraft Logo" style="height: 50px;">
-</div>
-
+        DeathCraft
+    </div>
 
     <nav>
 
@@ -51,14 +51,14 @@
 
 </header>
 <section class="hero" id="home">
+<div class="hero-glow glow1"></div>
+<div class="hero-glow glow2"></div>
 
     <div class="hero-content">
 
         <h1>DeathCraft</h1>
 
-        <p>
-            بهترین سرور ماینکرفت فارسی با مودهای متنوع و تجربه‌ای حرفه‌ای
-        </p>
+        <p id="typing-text"></p>
 
         <div class="buttons">
 
@@ -71,12 +71,15 @@
             </button>
 
         </div>
+<a href="#gamemodes" class="scroll-down">
+    ⌄
+</a>
 
-        <div class="server-ip">
+        <div class="server-ip" onclick="copyIP()">
 
-            play.deathcraft.ir
+    play.deathcraft.ir
 
-        </div>
+</div>
 
     </div>
 
