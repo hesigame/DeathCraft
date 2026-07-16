@@ -2,33 +2,110 @@ function copyIP(){
 
     navigator.clipboard.writeText("play.deathcraft.ir");
 
-    alert("IP سرور کپی شد!");
+    const toast = document.getElementById("toast");
 
-}
-const topBtn=document.getElementById("topBtn");
+    toast.classList.add("show");
 
-window.onscroll=function(){
+    setTimeout(() => {
 
-    if(document.documentElement.scrollTop>300){
+        toast.classList.remove("show");
 
-        topBtn.style.display="block";
+    },2000);
 
-    }else{
+}const topBtn = document.getElementById("topBtn");
 
-        topBtn.style.display="none";
+if (topBtn) {
+
+    window.onscroll = function () {
+
+        if (document.documentElement.scrollTop > 300) {
+
+            topBtn.style.display = "block";
+
+        } else {
+
+            topBtn.style.display = "none";
+
+        }
+
+    };
+
+    topBtn.onclick = function () {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    };
+
+}/* ===== Typing Effect ===== */
+
+const texts = [
+    "بهترین سرور ماینکرفت فارسی",
+    "BedWars حرفه‌ای",
+    "Survival بدون لگ",
+    "OneBlock هیجان‌انگیز",
+    "SkyMine اختصاصی"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+
+const typingElement = document.getElementById("typing-text");
+
+function typeText() {
+
+    if (!typingElement) return;
+
+    if (charIndex < texts[textIndex].length) {
+
+        typingElement.textContent += texts[textIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeText, 70);
+
+    } else {
+
+        setTimeout(deleteText, 1800);
 
     }
 
 }
 
-topBtn.onclick=function(){
+function deleteText() {
 
-    window.scrollTo({
+    if (charIndex > 0) {
 
-        top:0,
+        typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
 
-        behavior:"smooth"
+        charIndex--;
 
-    });
+        setTimeout(deleteText, 35);
+
+    } else {
+
+        textIndex++;
+
+        if (textIndex >= texts.length) {
+
+            textIndex = 0;
+
+        }
+
+        setTimeout(typeText, 300);
+
+    }
 
 }
+
+window.addEventListener("load", () => {
+
+    typeText();
+
+});
+console.log("Script Loaded");
+console.log(document.getElementById("typing-text"));
