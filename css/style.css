@@ -40,13 +40,42 @@ backdrop-filter:blur(10px);
 
 }
 
-.logo{text-shadow:0 0 20px #ff3333;
+.logo{
 
-    font-size:30px;
+    font-size:32px;
 
-    font-weight:bold;
+    font-weight:900;
 
     color:#00ff88;
+
+    text-shadow:
+    0 0 8px #00ff88,
+    0 0 20px #00ff88,
+    0 0 40px #00ff88;
+
+    animation:logoGlow 3s infinite alternate;
+
+}
+
+@keyframes logoGlow{
+
+    from{
+
+        text-shadow:
+        0 0 5px #00ff88,
+        0 0 15px #00ff88;
+
+    }
+
+    to{
+
+        text-shadow:
+        0 0 12px #00ff88,
+        0 0 35px #00ff88,
+        0 0 60px #00ff88;
+
+    }
+
 
 }
 
@@ -101,6 +130,12 @@ nav a:hover{
 }
 .hero{
 
+    position:relative;
+
+      overflow:hidden;
+
+      isolation:isolate;
+
     height:90vh;
 
     display:flex;
@@ -118,10 +153,14 @@ nav a:hover{
     background-position:center;
 
 }
-
 .hero-content{
 
+       position:relative;
+
+       z-index:2;
+
     max-width:900px;
+;
 
 }
 
@@ -132,6 +171,8 @@ nav a:hover{
     color:#00ff88;
 
     margin-bottom:20px;
+
+    animation:titleUp 1s ease;
 
 }
 
@@ -657,4 +698,302 @@ html{
     display:none;
 
 }
+/* ===== Hero Animation ===== */
 
+.hero-content{
+    animation: heroFade 1.2s ease;
+}
+
+.hero-content{
+
+    max-width:900px;
+
+    animation:
+        heroFade 1.2s ease,
+        floating 6s ease-in-out infinite;
+
+}
+.hero p{
+    animation: textUp 1.4s ease;
+}
+
+.buttons{
+    animation: buttonsUp 1.8s ease;
+}
+
+.server-ip{
+    animation: ipUp 2.2s ease;
+}
+
+@keyframes heroFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes titleUp{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes textUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes buttonsUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes ipUp{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===== Typing Effect ===== */
+
+#typing-text{
+
+    font-size:24px;
+
+    color:#d6d6d6;
+
+    min-height:45px;
+
+    margin-bottom:40px;
+
+    font-weight:500;
+
+}
+
+#typing-text::after{
+
+    content:"|";
+
+    color:#00ff88;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+/* ===== Toast ===== */
+
+#toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    background:#00ff88;
+
+    color:#111;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    box-shadow:0 0 25px rgba(0,255,136,.35);
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+#toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ===== Scroll Down ===== */
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#00ff88;
+
+    font-size:45px;
+
+    text-decoration:none;
+
+    animation:scrollArrow 1.8s infinite;
+
+    transition:.3s;
+
+}
+
+.scroll-down:hover{
+
+    color:#ffffff;
+
+    transform:translateX(-50%) scale(1.2);
+
+}
+
+@keyframes scrollArrow{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,12px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+/* ===== Hero Glow ===== */
+
+.hero-glow{
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.18;
+
+    animation:moveGlow 12s ease-in-out infinite alternate;
+
+}
+
+.glow1{
+
+    background:#00ff88;
+
+    top:-120px;
+
+    right:-120px;
+
+}
+
+.glow2{
+
+    background:#ff3333;
+
+    bottom:-120px;
+
+    left:-120px;
+
+    animation-duration:16s;
+
+}
+
+@keyframes moveGlow{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(60px,-40px) scale(1.2);
+
+    }
+
+}
