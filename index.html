@@ -9,6 +9,51 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <title>DeathCraft | سرور ماینکرفت ایرانی | SkyMine و Arcade</title>
 
+    <!-- ================= SEO META ================= -->
+    <meta name="description" content="DeathCraft، سرور ماینکرفت ایرانی با گیم‌مودهای SkyMine و Arcade. آی‌پی: Play.DeathCraft.IR — امنیت بالا، اقتصاد فعال و پشتیبانی ۲۴ ساعته.">
+    <meta name="keywords" content="سرور ماینکرفت ایرانی, دث کرفت, DeathCraft, سرور ماینکرفت, SkyMine, Arcade, Minecraft Server Iran, ماینکرفت فارسی">
+    <meta name="author" content="DeathCraft Server">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://deathcraft.ir/">
+
+    <!-- ================= OPEN GRAPH ================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DeathCraft">
+    <meta property="og:title" content="DeathCraft | سرور ماینکرفت ایرانی | SkyMine و Arcade">
+    <meta property="og:description" content="بهترین تجربه SkyMine و Arcade روی سرور ماینکرفت ایرانی DeathCraft. آی‌پی: Play.DeathCraft.IR">
+    <meta property="og:image" content="https://deathcraft.ir/favicon.png">
+    <meta property="og:url" content="https://deathcraft.ir/">
+    <meta property="og:locale" content="fa_IR">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeathCraft | سرور ماینکرفت ایرانی">
+    <meta name="twitter:description" content="بهترین تجربه SkyMine و Arcade روی سرور ماینکرفت ایرانی DeathCraft. آی‌پی: Play.DeathCraft.IR">
+    <meta name="twitter:image" content="https://deathcraft.ir/favicon.png">
+
+    <!-- ================= GEO (موقعیت مکانی برای SEO محلی) ================= -->
+    <meta name="geo.region" content="IR">
+    <meta name="geo.placename" content="Iran">
+    <meta name="ICBM" content="35.6892, 51.3890">
+    <meta name="geo.position" content="35.6892;51.3890">
+
+    <!-- ================= STRUCTURED DATA (JSON-LD) ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DeathCraft",
+      "url": "https://deathcraft.ir/",
+      "description": "سرور ماینکرفت ایرانی DeathCraft با گیم‌مودهای SkyMine و Arcade",
+      "inLanguage": "fa-IR",
+      "publisher": {
+        "@type": "Organization",
+        "name": "DeathCraft Server",
+        "url": "https://deathcraft.ir/"
+      }
+    }
+    </script>
+
     <link
         href="https://lib.arvancloud.ir/vazir-font/33.003/Farsi-Digits-Non-Latin/Vazirmatn-FD-NL-font-face.css"
         rel="stylesheet"
@@ -776,6 +821,8 @@
             align-items: center;
 
             gap: 10px;
+
+            flex-wrap: wrap;
         }
 
 
@@ -798,6 +845,142 @@
 
             transform:
                 scale(1.2);
+        }
+
+
+        /* ================= BOTTOM BAR (بج‌ها + کپی‌رایت) ================= */
+
+        .bottom-bar {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            background: rgba(255,255,255,.04);
+
+            border: 1px solid var(--glass-border);
+
+            border-radius: 16px;
+
+            padding: 14px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        .bottom-bar-badges {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .bottom-bar-badges a {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background: rgba(255,255,255,.06);
+
+            border: 1px solid var(--glass-border);
+
+            border-radius: 10px;
+
+            transition: .3s;
+
+            color: #fff;
+
+            font-size: 1.2rem;
+
+            text-decoration: none;
+        }
+
+
+        .bottom-bar-badges a:hover {
+            background:
+                rgba(86,138,46,.25);
+
+            border-color:
+                var(--mc-green);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        .bottom-bar-badges img {
+            width: 20px;
+
+            height: 20px;
+
+            object-fit: contain;
+
+            border-radius: 4px;
+        }
+
+
+        .bottom-bar-brand {
+            text-align: left;
+        }
+
+
+        .bottom-bar-brand .brand-name {
+            font-size: 1.2rem;
+
+            font-weight: 900;
+
+            color: #fff;
+
+            letter-spacing: 1px;
+        }
+
+
+        .bottom-bar-brand .brand-name i {
+            color: var(--mc-green-light);
+
+            margin-left: 6px;
+        }
+
+
+        .bottom-bar-brand p {
+            color: #888;
+
+            font-size: .85rem;
+
+            margin-top: 4px;
+        }
+
+
+        @media(max-width:600px) {
+
+            .bottom-bar {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .bottom-bar-brand {
+                text-align: center;
+            }
+
         }
 
 
@@ -1597,14 +1780,95 @@
         </div>
 
 
-        <div class="copyright">
+        <div class="bottom-bar">
 
-            <p>
+            <!-- بج‌های سرورهای مانیتورینگ / رأی -->
 
-                © 1405 DeathCraft Server.
-                تمامی حقوق محفوظ است.
+            <div class="bottom-bar-badges">
 
-            </p>
+                <a
+                    href="https://minecraft-mp.com/server/XXXX/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Minecraft-MP"
+                    title="رأی در Minecraft-MP"
+                >
+
+                    <img
+                        src="https://minecraft-mp.com/favicon.ico"
+                        alt="Minecraft-MP"
+                        loading="lazy"
+                    >
+
+                </a>
+
+
+                <a
+                    href="https://mctracker.ir/servers/715"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MCTracker"
+                    title="رأی در MCTracker"
+                >
+
+                    <img
+                        src="https://mctracker.ir/favicon.ico"
+                        alt="MCTracker"
+                        loading="lazy"
+                    >
+
+                </a>
+
+
+                <a
+                    href="https://rubika.ir/DeathCraft"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="روبیکا"
+                    title="روبیکا"
+                >
+
+                    <i class="fas fa-comments"></i>
+
+                </a>
+
+
+                <a
+                    href="https://www.aparat.com/DeathCraft"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="آپارات"
+                    title="آپارات"
+                >
+
+                    <i class="fas fa-play-circle"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- برند و کپی‌رایت -->
+
+            <div class="bottom-bar-brand">
+
+                <div class="brand-name">
+
+                    <i class="fas fa-skull-crossbones"></i>
+
+                    DEATHCRAFT
+
+                </div>
+
+
+                <p>
+
+                    © 1405 DeathCraft Server.
+                    تمامی حقوق محفوظ است.
+
+                </p>
+
+            </div>
 
         </div>
 
