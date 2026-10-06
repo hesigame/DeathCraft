@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="icon" type="image/png" href="https://deathcraft.ir/favicon.png">
     
     <title>DeathCraft | وضعیت و آمار سرور</title>
 
@@ -13,8 +14,9 @@
     <meta name="author" content="DeathCraft Server">
     <meta name="robots" content="index, follow">
 
-    <link href="vazir-font/33.003/Farsi-Digits-Non-Latin/Vazirmatn-FD-NL-font-face.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/6.3.0/css/all.min.css">
+    <!-- فونت‌ها و آیکون‌ها از CDN -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
     <style>
         :root {
@@ -33,28 +35,12 @@
         }
 
         body {
-            background: var(--bg-dark);
+            background: 
+                radial-gradient(circle at 50% 0%, rgba(86,138,46,.15), transparent 60%),
+                var(--bg-dark);
             color: white;
             overflow-x: hidden;
             min-height: 100vh;
-        }
-
-        /* ================= VIDEO BACKGROUND ================= */
-        .video-background {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -2;
-            opacity: .6;
-        }
-
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.9));
-            z-index: -1;
         }
 
         .particles {
@@ -77,7 +63,6 @@
             100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
 
-        /* ================= HEADER ================= */
         header {
             background: rgba(10,10,10,.8);
             backdrop-filter: blur(12px);
@@ -134,7 +119,6 @@
             transform: translateY(-2px);
         }
 
-        /* ================= MAIN ================= */
         main {
             width: min(1100px, 92%);
             margin: auto;
@@ -159,7 +143,6 @@
             color: var(--mc-green-light);
         }
 
-        /* SERVER TOP */
         .server-top {
             display: flex;
             align-items: center;
@@ -179,6 +162,7 @@
             border-radius: 18px;
             border: 2px solid var(--glass-border);
             box-shadow: 0 12px 35px rgba(0,0,0,.45);
+            background: #222;
         }
 
         .server-name {
@@ -222,7 +206,6 @@
             box-shadow: 0 0 8px currentColor;
         }
 
-        /* IP CARD */
         .ip-card {
             display: flex;
             align-items: center;
@@ -267,7 +250,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,.3);
         }
 
-        /* STATS GRID */
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -305,7 +287,6 @@
         .green { color: var(--mc-green-light); }
         .red { color: #ff5555; }
 
-        /* INFO GRID */
         .grid {
             display: grid;
             grid-template-columns: 1.4fr .6fr;
@@ -346,7 +327,6 @@
         .info span:first-child { color: #aaa; }
         .info span:last-child { font-weight: bold; text-align: left; overflow-wrap: anywhere; }
 
-        /* OWNER */
         .owner {
             display: flex;
             align-items: center;
@@ -358,12 +338,12 @@
             height: 70px;
             border-radius: 15px;
             border: 2px solid var(--glass-border);
+            background: #222;
         }
 
         .owner-name { font-weight: bold; font-size: 1.2rem; }
         .owner-role { color: #aaa; font-size: .9rem; margin-top: 4px; }
 
-        /* MODES */
         .modes {
             display: flex;
             flex-wrap: wrap;
@@ -387,7 +367,6 @@
             text-align: center;
         }
 
-        /* ================= FOOTER ================= */
         footer {
             background: rgba(0,0,0,.9);
             color: #888;
@@ -497,13 +476,6 @@
             transform: translateY(-3px);
         }
 
-        .bottom-bar-badges img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-
         .bottom-bar-brand {
             text-align: left;
         }
@@ -526,7 +498,6 @@
             margin-top: 4px;
         }
 
-        /* TOAST */
         #toast {
             visibility: hidden;
             min-width: 250px;
@@ -547,7 +518,6 @@
 
         #toast.show { visibility: visible; }
 
-        /* MOBILE */
         @media(max-width:850px) {
             .stats { grid-template-columns: repeat(2, 1fr); }
             .grid { grid-template-columns: 1fr; }
@@ -574,14 +544,8 @@
 
 <body>
 
-    <!-- ================= VIDEO & EFFECTS ================= -->
-    <video autoplay muted loop playsinline class="video-background">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
     <div class="particles" id="particles"></div>
 
-    <!-- ================= HEADER ================= -->
     <header>
         <a href="index.html" class="logo">
             <i class="fas fa-skull-crossbones"></i>
@@ -589,12 +553,12 @@
         </a>
         <nav>
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> خانه</a></li>
-                <li><a href="shop.html"><i class="fas fa-shopping-cart"></i> فروشگاه</a></li>
-                <li><a href="404.html"><i class="fas fa-user"></i> پنل کاربری</a></li>
+                <li><a href="index"><i class="fas fa-home"></i> خانه</a></li>
+                <li><a href="shop"><i class="fas fa-shopping-cart"></i> فروشگاه</a></li>
+                <li><a href="404"><i class="fas fa-user"></i> پنل کاربری</a></li>
                 <li><a href="https://rubika.ir/DeathCraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-comments"></i> روبیکا</a></li>
                 <li><a href="rules"><i class="fas fa-book"></i> قوانین</a></li>
-                <li><a href="stats.html"><i class="fas fa-chart-line"></i> آمار سرور</a></li>
+                <li><a href="stats"><i class="fas fa-chart-line"></i> آمار سرور</a></li>
             </ul>
         </nav>
     </header>
@@ -604,9 +568,8 @@
             <a href="index.html">DeathCraft</a> / آمار سرور
         </div>
 
-        <!-- SERVER -->
         <section class="server-top">
-            <img id="serverIcon" class="server-icon" src="favicon.png" alt="DeathCraft">
+            <img id="serverIcon" class="server-icon" src="https://deathcraft.ir/favicon.png" alt="DeathCraft">
             <div>
                 <div class="server-name">DeathCraft</div>
                 <div class="server-address">play.deathcraft.ir</div>
@@ -617,7 +580,6 @@
             </div>
         </section>
 
-        <!-- IP -->
         <section class="ip-card">
             <div>
                 <div class="ip-label">آدرس اتصال</div>
@@ -628,7 +590,6 @@
             </button>
         </section>
 
-        <!-- STATS -->
         <section class="stats">
             <div class="stat">
                 <div class="stat-label">وضعیت</div>
@@ -648,7 +609,6 @@
             </div>
         </section>
 
-        <!-- INFORMATION -->
         <section class="grid">
             <div class="card">
                 <div class="card-title">
@@ -664,13 +624,12 @@
                 </div>
             </div>
 
-            <!-- OWNER -->
             <div class="card">
                 <div class="card-title">
                     <i class="fas fa-user"></i> مالک سرور
                 </div>
                 <div class="owner">
-                    <img src="hesigame.jpg" alt="hesigame">
+                    <img src="https://deathcraft.ir/hesigame.jpg" alt="hesigame" onerror="this.src='https://deathcraft.ir/favicon.png'">
                     <div>
                         <div class="owner-name">hesigame</div>
                         <div class="owner-role">Founder</div>
@@ -687,17 +646,16 @@
         </div>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h4>لینک‌های مفید</h4>
                 <div class="footer-links">
-                    <a href="index">صفحه اصلی</a>
-                    <a href="shop">فروشگاه</a>
+                    <a href="index.html">صفحه اصلی</a>
+                    <a href="shop.html">فروشگاه</a>
                     <a href="rules">قوانین سرور</a>
-                    <a href="stats">آمار سرور</a>
-                    <a href="404">گزارش باگ</a>
+                    <a href="stats.html">آمار سرور</a>
+                    <a href="404.html">گزارش باگ</a>
                 </div>
             </div>
             <div class="footer-section">
@@ -719,8 +677,8 @@
         </div>
         <div class="bottom-bar">
             <div class="bottom-bar-badges">
-                <a href="https://minecraft-mp.com/server/XXXX/" target="_blank" rel="noopener noreferrer" aria-label="Minecraft-MP" title="رأی در Minecraft-MP"><img src="favicon.ico" alt="Minecraft-MP" loading="lazy"></a>
-                <a href="https://mctracker.ir/servers/715" target="_blank" rel="noopener noreferrer" aria-label="MCTracker" title="رأی در MCTracker"><img src="favicon-1.ico" alt="MCTracker" loading="lazy"></a>
+                <a href="https://minecraft-mp.com/server/XXXX/" target="_blank" rel="noopener noreferrer" aria-label="Minecraft-MP" title="رأی در Minecraft-MP"><img src="https://deathcraft.ir/favicon.ico" alt="Minecraft-MP" loading="lazy" style="width:20px;height:20px;border-radius:4px;"></a>
+                <a href="https://mctracker.ir/servers/715" target="_blank" rel="noopener noreferrer" aria-label="MCTracker" title="رأی در MCTracker"><img src="https://deathcraft.ir/favicon-1.ico" alt="MCTracker" loading="lazy" style="width:20px;height:20px;border-radius:4px;"></a>
                 <a href="https://rubika.ir/DeathCraft" target="_blank" rel="noopener noreferrer" aria-label="روبیکا" title="روبیکا"><i class="fas fa-comments"></i></a>
                 <a href="https://www.aparat.com/DeathCraft" target="_blank" rel="noopener noreferrer" aria-label="آپارات" title="آپارات"><i class="fas fa-play-circle"></i></a>
             </div>
@@ -731,27 +689,68 @@
         </div>
     </footer>
 
-    <!-- ================= TOAST ================= -->
     <div id="toast">
         <i class="fas fa-check-circle"></i> آی‌پی کپی شد!
     </div>
 
     <script>
-        const API_URL = "https://api.mcsrvstat.us/3/play.deathcraft.ir:25565";
-
         /* ================= STATUS ================= */
         async function getServerStatus() {
-            try {
-                const response = await fetch(API_URL + "?t=" + Date.now());
-                if (!response.ok) {
-                    throw new Error("API Error: " + response.status);
+            // لیست سرویس‌های مختلف برای دور زدن تحریم/فیلترینگ
+            const API_URLS = [
+                { url: "https://api.minetools.eu/ping/play.deathcraft.ir/25565", type: "minetools" },
+                { url: "https://api.mcsrvstat.us/3/play.deathcraft.ir", type: "mcsrvstat" },
+                { url: "https://api.mcstatus.io/v2/status/java/play.deathcraft.ir", type: "mcstatus" }
+            ];
+
+            for (let i = 0; i < API_URLS.length; i++) {
+                const api = API_URLS[i];
+                try {
+                    const response = await fetch(api.url + "?t=" + Date.now());
+                    if (!response.ok) continue; // اگر یکی جواب نداد، برو سراغ بعدی
+                    
+                    const data = await response.json();
+                    
+                    let isOnline = false;
+                    let players = { online: 0, max: 0 };
+                    let version = "نامشخص";
+                    let protocol = "-";
+                    let icon = null;
+
+                    if (api.type === "minetools") {
+                        isOnline = !data.error;
+                        players = data.players || { online: 0, max: 0 };
+                        version = data.version?.name || "نامشخص";
+                        protocol = data.version?.protocol || "-";
+                    } 
+                    else if (api.type === "mcsrvstat") {
+                        isOnline = data.online === true;
+                        players = data.players || { online: 0, max: 0 };
+                        version = data.version || "نامشخص";
+                        protocol = data.protocol?.version || "-";
+                        icon = data.icon || null;
+                    }
+                    else if (api.type === "mcstatus") {
+                        isOnline = data.online === true;
+                        players = data.players || { online: 0, max: 0 };
+                        version = data.version?.name || "نامشخص";
+                        protocol = data.version?.protocol || "-";
+                        icon = data.icon || null;
+                    }
+
+                    if (isOnline) {
+                        updatePage({ online: true, players, version, protocol, icon });
+                        return; // با موفقیت اطلاعات رو گرفتیم، دیگه نیازی به تست بقیه نیست
+                    }
+                    
+                } catch (error) {
+                    console.error(`API ${api.url} failed:`, error);
+                    // در صورت ارور، حلقه خودکار میره سراغ منبع بعدی
                 }
-                const data = await response.json();
-                updatePage(data);
-            } catch (error) {
-                console.error(error);
-                showOffline();
             }
+
+            // اگر هیچکدوم جواب ندادن، یعنی سرور واقعا آفلاینه یا ارتباط قطعه
+            showOffline();
         }
 
         /* ================= UPDATE PAGE ================= */
@@ -761,7 +760,6 @@
             const maxPlayers = data.players?.max ?? 0;
             const version = data.version ?? "نامشخص";
 
-            /* STATUS */
             const status = document.getElementById("status");
             const statusText = document.getElementById("statusText");
             const badge = document.getElementById("statusBadge");
@@ -778,30 +776,19 @@
                 badge.classList.add("offline");
             }
 
-            /* PLAYERS */
             document.getElementById("players").textContent = players;
-            /* MAX PLAYERS */
             document.getElementById("maxPlayers").textContent = maxPlayers;
-            /* VERSION */
             document.getElementById("version").textContent = version;
             document.getElementById("versionInfo").textContent = version;
 
-            /* PROTOCOL */
             if (data.protocol) {
-                const protocol = data.protocol;
-                if (typeof protocol === "object") {
-                    document.getElementById("protocol").textContent = protocol.version ?? protocol.name ?? "-";
-                } else {
-                    document.getElementById("protocol").textContent = protocol;
-                }
+                document.getElementById("protocol").textContent = data.protocol;
             }
 
-            /* ICON */
             if (data.icon) {
                 document.getElementById("serverIcon").src = data.icon;
             }
 
-            /* TIME */
             document.getElementById("lastUpdate").textContent = new Date().toLocaleTimeString("fa-IR", {
                 hour: "2-digit", minute: "2-digit", second: "2-digit"
             });
@@ -809,13 +796,16 @@
 
         /* ================= OFFLINE ================= */
         function showOffline() {
-            document.getElementById("status").textContent = "خطا در دریافت اطلاعات";
+            document.getElementById("status").textContent = "آفلاین";
             document.getElementById("status").className = "stat-value red";
-            document.getElementById("statusText").textContent = "نامشخص";
+            document.getElementById("statusText").textContent = "آفلاین";
             document.getElementById("statusBadge").classList.add("offline");
-            document.getElementById("players").textContent = "-";
-            document.getElementById("maxPlayers").textContent = "-";
+            document.getElementById("players").textContent = "0";
+            document.getElementById("maxPlayers").textContent = "0";
             document.getElementById("version").textContent = "-";
+            document.getElementById("lastUpdate").textContent = new Date().toLocaleTimeString("fa-IR", {
+                hour: "2-digit", minute: "2-digit", second: "2-digit"
+            });
         }
 
         /* ================= COPY ================= */
