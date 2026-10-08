@@ -7,6 +7,15 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- ================= PWA ================= -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#568a2e">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="DeathCraft">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>DeathCraft | سرور ماینکرفت ایرانی | SkyMine و Arcade</title>
 
     <!-- ================= SEO META ================= -->
@@ -14,7 +23,7 @@
     <meta name="keywords" content="سرور ماینکرفت ایرانی, دث کرفت, DeathCraft, سرور ماینکرفت, SkyMine, Arcade, Minecraft Server Iran, ماینکرفت فارسی">
     <meta name="author" content="DeathCraft Server">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="index.htm">
+    <link rel="canonical" href="https://deathcraft.ir/">
 
     <!-- ================= OPEN GRAPH ================= -->
     <meta property="og:type" content="website">
@@ -590,6 +599,62 @@
             color: #ff7777 !important;
         }
 
+
+        /* ================= INSTALL MODAL ================= */
+        .install-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.75);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .install-modal.show {
+            display: flex;
+        }
+
+        .install-box {
+            background: rgba(25,25,25,.95);
+            border: 2px solid var(--mc-green);
+            border-radius: 20px;
+            padding: 30px 25px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(86,138,46,.4);
+            animation: bounceIn .5s ease;
+        }
+
+        .install-box img {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+        }
+
+        .install-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--mc-green-light);
+        }
+
+        .install-box p,
+        .install-box li {
+            color: #ccc;
+            line-height: 1.9;
+            font-size: .95rem;
+        }
+
+        .install-box ol {
+            text-align: right;
+            padding-right: 22px;
+            margin: 12px 0;
+        }
+
         /* ================= TOAST ================= */
         #toast {
             visibility: hidden;
@@ -673,7 +738,7 @@
 <body>
 
     <!-- ================= VIDEO ================= -->
-    <video autoplay muted loop playsinline class="video-background">
+    <video autoplay muted loop playsinline preload="metadata" class="video-background" id="bgVideo">
         <source src="background.mp4" type="video/mp4">
     </video>
 
@@ -690,19 +755,19 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index">
+                    <a href="index.html">
                         <i class="fas fa-home"></i>
                         خانه
                     </a>
                 </li>
                 <li>
-                    <a href="shop">
+                    <a href="shop.html">
                         <i class="fas fa-shopping-cart"></i>
                         فروشگاه
                     </a>
                 </li>
                 <li>
-                    <a href="404">
+                    <a href="404.html">
                         <i class="fas fa-user"></i>
                         پنل کاربری
                     </a>
@@ -715,22 +780,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="rules">
+                    <a href="rules.html">
                         <i class="fas fa-book"></i>
                         قوانین
                     </a>
                 </li>
                 <!-- STATS -->
                 <li>
-                    <a href="stats">
+                    <a href="stats.html">
                         <i class="fas fa-chart-line"></i>
-                        وظعیت 
+                        وضعیت 
                     </a>
                 </li>
                 <li>
-                    <a href="info">
+                    <a href="info.html">
                         <i class="fas fa-info-circle"></i>
                         اطلاعات
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="install-trigger nav-install" style="display:none">
+                        <i class="fas fa-download"></i>
+                        دانلود اپ
                     </a>
                 </li>
             </ul>
@@ -764,6 +835,11 @@
                 <i class="fas fa-comments"></i>
                 روبیکا
             </a>
+            <!-- DOWNLOAD APP -->
+            <button type="button" class="mc-btn green install-trigger" id="installBtn">
+                <i class="fas fa-download"></i>
+                دانلود اپلیکیشن
+            </button>
         </div>
     </section>
 
@@ -816,7 +892,7 @@
                 اختصاصی، تجربه‌ای متفاوت برای بازیکنان
                 Minecraft ایجاد کنیم.
             </p>
-            <a href="rules" class="mc-btn">
+            <a href="rules.html" class="mc-btn">
                 <i class="fas fa-info-circle"></i>
                 قوانین سرور
             </a>
@@ -851,9 +927,10 @@
                 <div class="footer-links">
                     <a href="index.html">صفحه اصلی</a>
                     <a href="shop.html">فروشگاه</a>
-                    <a href="rules">قوانین سرور</a>
+                    <a href="rules.html">قوانین سرور</a>
                     <a href="stats.html">آمار سرور</a>
                     <a href="404.html">گزارش باگ</a>
+                    <a href="#" class="install-trigger">دانلود اپلیکیشن</a>
                 </div>
             </div>
 
@@ -894,9 +971,6 @@
         <div class="bottom-bar">
             <!-- بج‌های سرورهای مانیتورینگ / رأی -->
             <div class="bottom-bar-badges">
-                <a href="https://minecraft-mp.com/server/XXXX/" target="_blank" rel="noopener noreferrer" aria-label="Minecraft-MP" title="رأی در Minecraft-MP">
-                    <img src="favicon.ico" alt="Minecraft-MP" loading="lazy">
-                </a>
                 <a href="https://mctracker.ir/servers/715" target="_blank" rel="noopener noreferrer" aria-label="MCTracker" title="رأی در MCTracker">
                     <img src="favicon-1.ico" alt="MCTracker" loading="lazy">
                 </a>
@@ -918,6 +992,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- ================= INSTALL MODAL ================= -->
+    <div class="install-modal" id="installModal">
+        <div class="install-box">
+            <img src="icon-192.png" alt="DeathCraft" onerror="this.style.display='none'">
+            <h3>نصب اپلیکیشن DeathCraft</h3>
+            <div id="installHelp"></div>
+            <button type="button" class="mc-btn" id="installClose">بستن</button>
+        </div>
+    </div>
 
     <!-- ================= TOAST ================= -->
     <div id="toast">
@@ -958,6 +1042,73 @@
                 container.appendChild(particle);
             }
         }
+
+        /* ================= BACKGROUND VIDEO (موبایل / دیتای کم) ================= */
+        (function() {
+            const v = document.getElementById("bgVideo");
+            const saveData = navigator.connection && navigator.connection.saveData;
+            if (v && (window.innerWidth < 768 || saveData)) {
+                v.pause();
+                v.removeAttribute("src");
+                while (v.firstChild) v.removeChild(v.firstChild);
+                v.load();
+                v.style.display = "none";
+            }
+        })();
+
+        /* ================= PWA / DOWNLOAD APP ================= */
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                navigator.serviceWorker.register("/sw.js").catch(function() {});
+            });
+        }
+
+        let deferredPrompt = null;
+        const modal = document.getElementById("installModal");
+        const help = document.getElementById("installHelp");
+        const isStandalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+        function showHelp() {
+            if (isIOS) {
+                help.innerHTML = "<ol><li>روی دکمه <b>Share</b> (اشتراک‌گذاری) در سافاری بزنید.</li><li>گزینه <b>Add to Home Screen</b> را انتخاب کنید.</li><li>روی <b>Add</b> بزنید.</li></ol>";
+            } else {
+                help.innerHTML = "<ol><li>منوی مرورگر (سه نقطه) را باز کنید.</li><li>گزینه <b>Install app</b> یا <b>Add to Home screen</b> را بزنید.</li></ol><p>اگر گزینه را نمی‌بینید، سایت را با <b>Chrome</b> یا <b>Edge</b> باز کنید.</p>";
+            }
+            modal.classList.add("show");
+        }
+
+        window.addEventListener("beforeinstallprompt", function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        document.querySelectorAll(".install-trigger").forEach(function(el) {
+            if (isStandalone) { el.style.display = "none"; return; }
+            if (el.classList.contains("nav-install")) el.style.display = "";
+            el.addEventListener("click", async function(ev) {
+                ev.preventDefault();
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                } else {
+                    showHelp();
+                }
+            });
+        });
+
+        document.getElementById("installClose").addEventListener("click", function() {
+            modal.classList.remove("show");
+        });
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) modal.classList.remove("show");
+        });
+
+        window.addEventListener("appinstalled", function() {
+            document.querySelectorAll(".install-trigger").forEach(function(el) { el.style.display = "none"; });
+            modal.classList.remove("show");
+        });
 
         createParticles();
     </script>
