@@ -600,61 +600,6 @@
         }
 
 
-        /* ================= INSTALL MODAL ================= */
-        .install-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.75);
-            backdrop-filter: blur(6px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .install-modal.show {
-            display: flex;
-        }
-
-        .install-box {
-            background: rgba(25,25,25,.95);
-            border: 2px solid var(--mc-green);
-            border-radius: 20px;
-            padding: 30px 25px;
-            max-width: 440px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(86,138,46,.4);
-            animation: bounceIn .5s ease;
-        }
-
-        .install-box img {
-            width: 72px;
-            height: 72px;
-            border-radius: 16px;
-            margin-bottom: 12px;
-        }
-
-        .install-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--mc-green-light);
-        }
-
-        .install-box p,
-        .install-box li {
-            color: #ccc;
-            line-height: 1.9;
-            font-size: .95rem;
-        }
-
-        .install-box ol {
-            text-align: right;
-            padding-right: 22px;
-            margin: 12px 0;
-        }
-
         /* ================= TOAST ================= */
         #toast {
             visibility: hidden;
@@ -798,12 +743,6 @@
                         اطلاعات
                     </a>
                 </li>
-                <li>
-                    <a href="#" class="install-trigger nav-install" style="display:none">
-                        <i class="fas fa-download"></i>
-                        دانلود اپ
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
@@ -835,11 +774,6 @@
                 <i class="fas fa-comments"></i>
                 روبیکا
             </a>
-            <!-- DOWNLOAD APP -->
-            <button type="button" class="mc-btn green install-trigger" id="installBtn">
-                <i class="fas fa-download"></i>
-                دانلود اپلیکیشن
-            </button>
         </div>
     </section>
 
@@ -930,7 +864,6 @@
                     <a href="rules.html">قوانین سرور</a>
                     <a href="stats.html">آمار سرور</a>
                     <a href="404.html">گزارش باگ</a>
-                    <a href="#" class="install-trigger">دانلود اپلیکیشن</a>
                 </div>
             </div>
 
@@ -993,16 +926,6 @@
         </div>
     </footer>
 
-    <!-- ================= INSTALL MODAL ================= -->
-    <div class="install-modal" id="installModal">
-        <div class="install-box">
-            <img src="icon-192.png" alt="DeathCraft" onerror="this.style.display='none'">
-            <h3>نصب اپلیکیشن DeathCraft</h3>
-            <div id="installHelp"></div>
-            <button type="button" class="mc-btn" id="installClose">بستن</button>
-        </div>
-    </div>
-
     <!-- ================= TOAST ================= -->
     <div id="toast">
         <i class="fas fa-check-circle"></i>
@@ -1056,62 +979,37 @@
             }
         })();
 
-        /* ================= PWA / DOWNLOAD APP ================= */
+        /* ================= SERVICE WORKER ================= */
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", function() {
                 navigator.serviceWorker.register("/sw.js").catch(function() {});
             });
         }
 
-        let deferredPrompt = null;
-        const modal = document.getElementById("installModal");
-        const help = document.getElementById("installHelp");
-        const isStandalone = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
-        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-
-        function showHelp() {
-            if (isIOS) {
-                help.innerHTML = "<ol><li>روی دکمه <b>Share</b> (اشتراک‌گذاری) در سافاری بزنید.</li><li>گزینه <b>Add to Home Screen</b> را انتخاب کنید.</li><li>روی <b>Add</b> بزنید.</li></ol>";
-            } else {
-                help.innerHTML = "<ol><li>منوی مرورگر (سه نقطه) را باز کنید.</li><li>گزینه <b>Install app</b> یا <b>Add to Home screen</b> را بزنید.</li></ol><p>اگر گزینه را نمی‌بینید، سایت را با <b>Chrome</b> یا <b>Edge</b> باز کنید.</p>";
-            }
-            modal.classList.add("show");
-        }
-
-        window.addEventListener("beforeinstallprompt", function(e) {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-
-        document.querySelectorAll(".install-trigger").forEach(function(el) {
-            if (isStandalone) { el.style.display = "none"; return; }
-            if (el.classList.contains("nav-install")) el.style.display = "";
-            el.addEventListener("click", async function(ev) {
-                ev.preventDefault();
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    await deferredPrompt.userChoice;
-                    deferredPrompt = null;
-                } else {
-                    showHelp();
-                }
-            });
-        });
-
-        document.getElementById("installClose").addEventListener("click", function() {
-            modal.classList.remove("show");
-        });
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) modal.classList.remove("show");
-        });
-
-        window.addEventListener("appinstalled", function() {
-            document.querySelectorAll(".install-trigger").forEach(function(el) { el.style.display = "none"; });
-            modal.classList.remove("show");
-        });
 
         createParticles();
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    // موقعیت ویجت: bl پایین-چپ | br پایین-راست | cl وسط-چپ | cr وسط-راست
+    Tawk_API.customStyle = {
+        visibility: {
+            desktop: { position: 'cr', xOffset: 10, yOffset: 0 },
+            mobile:  { position: 'cr', xOffset: 5,  yOffset: 0 }
+        }
+    };
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6ad5fee3d072d134cf0ab3a2/1k59unaa1';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 
 </body>
 
