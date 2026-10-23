@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07090d">
+  <meta name="description" content="دانلود رسمی اپلیکیشن DeathCraft برای ویندوز و اندروید.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="https://lib.arvancloud.ir/font-awesome/6.3.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <title>دانلود اپلیکیشن | DeathCraft</title>
+  <style>
+    .download-wrap{width:min(900px,calc(100% - 32px));margin:35px auto 70px}
+    .download-head{text-align:center;padding:38px 0 28px}
+    .download-head h1{font-size:clamp(2.1rem,7vw,4rem);font-weight:900;margin:16px 0 10px}
+    .download-head p{color:var(--mu);line-height:2;max-width:650px;margin:0 auto}
+    .download-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .download-card{padding:30px;text-align:center;display:flex;flex-direction:column;align-items:center;min-height:330px}
+    .download-icon{width:82px;height:82px;border-radius:25px;display:grid;place-items:center;font-size:2rem;color:#03140a;background:linear-gradient(135deg,var(--g),var(--c));margin-bottom:20px;box-shadow:0 12px 32px color-mix(in srgb,var(--g) 22%,transparent)}
+    .download-card h2{font-size:1.5rem;margin:0 0 10px}
+    .download-card p{color:var(--mu);line-height:2;margin:0 0 24px;flex:1}
+    .download-card .btn{justify-content:center;width:100%;max-width:300px}
+    .soon{font-size:.82rem;color:var(--mu);margin-top:12px}
+    .download-note{margin-top:24px;padding:18px 20px;line-height:2;color:var(--mu);text-align:center}
+    .back-home{text-align:center;margin-top:28px}
+    @media(max-width:650px){.download-grid{grid-template-columns:1fr}.download-card{min-height:unset}.download-head{padding-top:18px}}
+  </style>
+</head>
+<body class="inner">
+  <div class="dc-bg"><i></i><i></i><i></i></div>
+  <header class="dc-top">
+    <a href="index.html" class="dc-brand"><b><i class="fas fa-skull-crossbones"></i></b><span>DeathCraft</span></a>
+    <ul class="dc-links" id="dc-menu">
+      <li><a href="index.html"><i class="fas fa-house"></i>خانه</a></li>
+      <li><a href="download.html" class="on"><i class="fas fa-download"></i>دانلود اپ</a></li>
+      <li><a href="https://rubika.ir/DeathCraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-comments"></i>روبیکا</a></li>
+    </ul>
+    <div class="dc-act"><button class="dc-ic" id="dc-theme" aria-label="تغییر تم شب و روز"><i class="fas fa-circle-half-stroke"></i></button><button class="dc-ic dc-burger" id="dc-burger" aria-label="بازکردن منو"><i class="fas fa-bars"></i></button></div>
+  </header>
+  <main class="download-wrap">
+    <div class="download-head">
+      <span class="eyebrow">دانلود رسمی</span>
+      <h1><span class="grad">DeathCraft</span></h1>
+      <p>دستگاهت رو انتخاب کن تا به دانلود نسخه مناسب هدایت بشی. نسخه ویندوز آماده است؛ نسخه اندروید هنوز منتشر نشده و به محض آماده‌شدن همین‌جا قرار می‌گیره.</p>
+    </div>
+    <div class="download-grid">
+      <article class="cardx download-card">
+        <div class="download-icon"><i class="fab fa-windows"></i></div>
+        <h2>کامپیوتر ویندوز</h2>
+        <p>نسخه نصبی برای ویندوز ۱۰ و ۱۱. بعد از دانلود، فایل نصب را اجرا کن.</p>
+        <a class="btn pri" href="https://github.com/hesigame/DeathCraft/releases/latest/download/DeathCraft-Setup-1.0.0.exe"><i class="fas fa-download"></i>دانلود برای کامپیوتر (.exe)</a>
+        <span class="soon">اگر دانلود شروع نشد، ابتدا فایل نصب باید در GitHub Releases منتشر شده باشد.</span>
+      </article>
+      <article class="cardx download-card">
+        <div class="download-icon"><i class="fab fa-android"></i></div>
+        <h2>گوشی اندروید</h2>
+        <p>نسخه APK هنوز آماده انتشار نیست. وقتی فایل نهایی ساخته و منتشر شود، لینک مستقیم دانلود در همین بخش فعال می‌شود.</p>
+        <button class="btn" type="button" disabled style="opacity:.55;cursor:not-allowed"><i class="fas fa-hourglass-half"></i>نسخه اندروید به‌زودی</button>
+        <span class="soon">فعلاً لینک دانلود APK فعال نیست.</span>
+      </article>
+    </div>
+    <div class="cardx download-note"><i class="fas fa-shield-halved" style="color:var(--g)"></i> فقط فایل‌هایی را نصب کن که از لینک رسمی DeathCraft دریافت کرده‌ای.</div>
+    <div class="back-home"><a href="index.html" class="btn"><i class="fas fa-arrow-right"></i>بازگشت به صفحه اصلی</a></div>
+  </main>
+  <footer class="dc-foot"><div class="wrap"><div class="fbot"><span>© 1405 DeathCraft Server. تمامی حقوق محفوظ است.</span><span>ساخته‌شده با ❤ برای بازیکن‌های ایرانی</span></div></div></footer>
+  <script src="assets/js/theme.js"></script>
+</body>
+</html>
