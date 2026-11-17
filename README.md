@@ -1,59 +1,59 @@
 # ☠️ DeathCraft
 
-\<p align="center">
-&#x20; \<img src="assets/images/favicon.png" width="110" alt="DeathCraft Logo">
-\</p>
+<h3 align="center">A Minecraft Gaming Network & Web Platform</h3>
 
-\<h3 align="center">A Minecraft Gaming Network & Web Platform\</h3>
+<p align="center">
+  <strong>Build. Explore. Compete. Survive.</strong>
+</p>
 
-\<p align="center">   \<b>Build. Explore. Compete. Survive.\</b> \</p>
-
-\<p align="center">   \<a href="[https://deathcraft.ir/](https://deathcraft.ir/)">Website\</a> •   \<a href="[https://github.com/hesigame/DeathCraft](https://github.com/hesigame/DeathCraft)">GitHub\</a> •   \<a href="[https://rubika.ir/DeathCraft](https://rubika.ir/DeathCraft)">Community\</a> \</p>
+<p align="center">
+  <a href="https://deathcraft.ir/">Website</a> •
+  <a href="https://github.com/hesigame/DeathCraft">GitHub</a> •
+  <a href="https://rubika.ir/DeathCraft">Community</a>
+</p>
 
 ---
 
 ## 🌐 About DeathCraft
 
-**DeathCraft** is an independent Minecraft gaming network and web platform built to deliver an engaging, accessible, and enjoyable experience for the Minecraft community.
+**DeathCraft** is an independent Minecraft gaming network and web platform designed to deliver an engaging and enjoyable experience for the Minecraft community.
 
-The project combines a custom-designed website, player services, server information, and gaming features into one centralized platform.
+The project brings together a custom website, player services, server information, and gaming features in one centralized platform.
 
-Our goal is to continuously improve the Minecraft experience through technology, creativity, and community-driven development.
+Our mission is to improve the Minecraft experience through technology, creativity, and continuous development.
 
 ## 🎮 Game Modes
 
 ### ☁️ SkyMine
-
 Explore your own island, collect resources, expand your world, build your economy, and compete with other players.
 
 ### 🕹️ Arcade
-
-Enjoy exciting multiplayer mini-games, fast-paced challenges, and competitive gameplay with friends.
+Enjoy multiplayer mini-games, exciting challenges, and competitive gameplay with friends.
 
 ## ✨ Website Features
 
-- Modern and responsive user interface
+- Modern and responsive design
 - Dark and light theme support
-- Official server information and status
-- Dedicated rules and information pages
-- Player statistics and server monitoring
+- Server information and status
+- Rules and information pages
+- Player statistics
 - User account and panel integration
 - Application download page
-- Progressive Web App (PWA) support
+- Progressive Web App (PWA)
 - Mobile-friendly experience
-- SEO and social media metadata
-- Custom visual design and animations
+- SEO optimization
+- Custom animations and visual effects
 
 ## 🛠️ Technologies
 
-DeathCraft's web platform is built using:
-
-- **HTML5** – Website structure
-- **CSS3** – Responsive layouts and visual design
-- **JavaScript** – Interactive features and functionality
-- **PWA** – Installable web experience
-- **JSON** – Configuration and application metadata
-- **GitHub Pages** – Website hosting and deployment
+| Technology | Purpose |
+|---|---|
+| HTML5 | Website structure |
+| CSS3 | Styling and responsive design |
+| JavaScript | Interactive functionality |
+| JSON | Configuration and metadata |
+| PWA | Installable web experience |
+| GitHub Pages | Website hosting |
 
 ## 📂 Project Structure
 
@@ -62,8 +62,7 @@ DeathCraft/
 ├── assets/
 │   ├── css/
 │   ├── js/
-│   ├── images/
-│   └── ...
+│   └── images/
 ├── index.html
 ├── info.html
 ├── auth.html
@@ -81,48 +80,42 @@ DeathCraft/
 
 ## 🚀 Getting Started
 
-You can explore or run the website locally.
-
-1. Clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/hesigame/DeathCraft.git
 ```
 
-2. Open the project directory:
+Navigate to the project directory:
 
 ```bash
 cd DeathCraft
 ```
 
-3. Open `index.html` in your browser or use a local development server.
+Open `index.html` in your browser or run the project using a local development server.
 
 ## 🌍 Join DeathCraft
 
-| Service           | Address                                                                          |
-| ----------------- | -------------------------------------------------------------------------------- |
-| Official Website  | [https://deathcraft.ir/](https://deathcraft.ir/)                                 |
-| Minecraft Server  | `Play.DeathCraft.IR`                                                             |
-| GitHub Repository | [https://github.com/hesigame/DeathCraft](https://github.com/hesigame/DeathCraft) |
-| Community         | [https://rubika.ir/DeathCraft](https://rubika.ir/DeathCraft)                     |
+| Service | Address |
+|---|---|
+| 🌐 Website | [DeathCraft.IR](https://deathcraft.ir/) |
+| 🎮 Minecraft Server | `Play.DeathCraft.IR` |
+| 💻 GitHub | [DeathCraft Repository](https://github.com/hesigame/DeathCraft) |
+| 👥 Community | [DeathCraft Community](https://rubika.ir/DeathCraft) |
 
-**Minecraft Edition:** Java Edition
-
-**Advertised Version Compatibility:** 1.8 – 26
+**Edition:** Minecraft Java Edition
 
 ## 👨‍💻 Development
 
-DeathCraft is an independently developed project maintained by its development team.
+DeathCraft is an independently developed project with a focus on continuous improvement, reliable infrastructure, and better user experiences.
 
-The repository documents ongoing development, improvements, and updates to the platform.
-
-We believe in building reliable digital experiences and continuously exploring new technologies to improve the project.
+The repository documents the ongoing development of the platform and its features.
 
 ## 🤝 Contributions
 
-Suggestions, ideas, and feedback are welcome.
+Ideas, suggestions, and feedback are welcome.
 
-If you find an issue or have an idea for improvement, feel free to open a GitHub Issue.
+If you discover a bug or have an idea for improvement, feel free to open an Issue on GitHub.
 
 ## 📌 Roadmap
 
@@ -132,18 +125,23 @@ If you find an issue or have an idea for improvement, feel free to open a GitHub
 - [x] Rules and statistics pages
 - [x] PWA foundation
 - [x] Windows application download page
-- [ ] Android application release
+- [ ] Android application
 - [ ] More player-focused features
-- [ ] AI-powered support and assistance
-- [ ] Continuous platform improvements
+- [ ] AI-powered support assistant
+- [ ] Further platform improvements
 
 ## 📜 License
 
-All rights reserved © 2026 DeathCraft.
+Copyright © 2026 DeathCraft.
 
-Unless otherwise stated, the source code, branding, graphics, and project assets are proprietary to their respective owners. No permission to redistribute or commercially reuse them is granted by this repository.
+All rights reserved. Unless explicitly stated otherwise, the source code, branding, graphics, and project assets may not be redistributed or commercially reused without permission.
 
 ---
 
-\<p align="center">   \<b>☠️ DeathCraft — More Than Just Minecraft.\</b>   \<br>   \<sub>Built with passion for the Minecraft community.\</sub>   \<br>\<br>   \<a href="[https://deathcraft.ir/](https://deathcraft.ir/)">deathcraft.ir\</a> \</p>
-****
+<p align="center">
+  <strong>☠️ DeathCraft — More Than Just Minecraft.</strong>
+  <br>
+  <sub>Built with passion for the Minecraft community.</sub>
+  <br><br>
+  <a href="https://deathcraft.ir/">deathcraft.ir</a>
+</p>
